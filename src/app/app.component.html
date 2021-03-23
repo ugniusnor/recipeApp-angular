@@ -1,10 +1,11 @@
-<app-header> </app-header>
+<app-header (changePage)="changePage($event)" [currentPage]="currentPage">
+</app-header>
 
 <div class="container">
   <div class="row" style="justify-content: space-evenly !important">
     <div class="col-md-12 justify-content-between">
-      <app-recipes></app-recipes>
-      <app-shoping-list> </app-shoping-list>
+      <app-recipes *ngIf="currentPage === 'recipes'"></app-recipes>
+      <app-shoping-list *ngIf="currentPage === 'list'"> </app-shoping-list>
     </div>
   </div>
 </div>
