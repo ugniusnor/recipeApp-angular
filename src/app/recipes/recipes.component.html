@@ -1,8 +1,17 @@
 <div class="row" style="justify-content: space-evenly">
   <div class="col-md-5">
-    <app-recipe-list> </app-recipe-list>
+    <app-recipe-list
+      (selectRecipe)="selectRecipe($event)"
+      [selectedRecipe]="selectedRecipe"
+    >
+    </app-recipe-list>
   </div>
   <div class="col-md-5 m-2">
-    <app-recipe-detail> </app-recipe-detail>
+    <app-recipe-detail
+      *ngIf="selectedRecipe; else infoText"
+      [selectedRecipe]="selectedRecipe"
+    >
+    </app-recipe-detail>
+    <ng-template #infoText>Please selecta a recipe</ng-template>
   </div>
 </div>
