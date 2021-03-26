@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
   @Input() currentPage!: string;
   @Output() changePage = new EventEmitter<string>();
   constructor() {}
-
+  status = false;
   ngOnInit(): void {}
 
   selectPage(pageName: string) {

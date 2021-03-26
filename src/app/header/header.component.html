@@ -35,6 +35,8 @@
       <li class="nav-item dropdown right">
         <a
           class="nav-link dropdown-toggle"
+          (click)="status = !status"
+          [ngClass]="status ? 'show' : ''"
           href="#"
           id="navbarDropdownMenuLink"
           role="button"
@@ -44,7 +46,11 @@
         >
           Dropdown link
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <div
+          class="dropdown-menu"
+          [ngClass]="status ? 'show' : ''"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>

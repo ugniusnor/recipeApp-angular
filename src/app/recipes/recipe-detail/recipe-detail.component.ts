@@ -8,6 +8,6 @@ import { Recipe } from '../recipe.model';
 export class RecipeDetailComponent implements OnInit {
   @Input() selectedRecipe!: Recipe;
   constructor() {}
-
+  status = false;
   ngOnInit(): void {}
 }
